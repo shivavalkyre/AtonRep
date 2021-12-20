@@ -1,0 +1,139 @@
+﻿Build1=Default,b4a.example
+Build2=AtonRep,com.atonrep
+File1=aton_marker.png
+File10=LayoutHome.bal
+File11=layoutisiclvMensu.bal
+File12=layoutisiheadermensu.bal
+File13=LayoutisiNewMensu.bal
+File14=LayoutMensu.bal
+File15=LayoutNewMensu.bal
+File16=Login.bal
+File17=logo.png
+File18=map.png
+File19=mensu.png
+File2=aton_marker1.png
+File20=mensu_color.png
+File21=pelsu.png
+File22=Poppins-Regular.ttf
+File23=ramsu.png
+File24=ramsu_color.png
+File25=Register.bal
+File26=Roboto-Medium.ttf
+File27=top logo.png
+File28=user.png
+File3=aton_marker2.png
+File4=aton_pic.png
+File5=exit.png
+File6=Home.bal
+File7=home.png
+File8=lamsu.png
+File9=Layout.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group\fonts
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group\fonts
+FileGroup27=Default Group
+FileGroup28=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=appcompat
+Library10=okhttputils2
+Library11=phone
+Library12=reflection
+Library13=runtimepermissions
+Library14=sd_dialogs_7
+Library15=stringfunctions
+Library16=stringutils
+Library17=xcustomlistview
+Library18=xui
+Library19=xui views
+Library2=aspopupmenu
+Library3=bitmapcreator
+Library4=core
+Library5=googlemaps
+Library6=googlemapsextras
+Library7=javaobject
+Library8=json
+Library9=justifytextview
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'CreateResourceFromFile(Macro, Themes.LightTheme)~\n~CreateResource(values, theme.xml,~\n~<resources>~\n~    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">~\n~        <item name="colorPrimary">#FF5B8DD7</item>~\n~        <item name="colorPrimaryDark">#FF5B8DD7</item>~\n~        <item name="colorAccent">#707070</item>~\n~        <item name="windowNoTitle">true</item>~\n~        <item name="windowActionBar">false</item>~\n~    </style>~\n~</resources>~\n~)~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.GooglePlayBase)~\n~AddApplicationText(~\n~<meta-data~\n~  android:name="com.google.android.geo.API_KEY"~\n~  android:value="AIzaSyDKFDC_tSirxsVjb0-bnmaYS8nctemUut4"/>~\n~)~\n~~\n~AddApplicationText(~\n~<uses-library~\n~      android:name="org.apache.http.legacy"~\n~      android:required="false" />~\n~)~\n~~\n~AddPermission(android.permission.READ_EXTERNAL_STORAGE)~\n~SetApplicationAttribute(android:usesCleartextTraffic, "true")~\n~'End of default text.~\n~
+Module1=CircularProgressBar
+Module2=general
+Module3=Home
+Module4=Login
+Module5=Mensu
+Module6=NewMensu
+Module7=Register
+Module8=SDCalendarDialog
+Module9=Starter
+NumberOfFiles=28
+NumberOfLibraries=19
+NumberOfModules=9
+Version=11
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: AtonRep
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: False
+#End Region
+#AdditionalJar: com.android.support:design
+'#DebuggerForceStandardAssets: true
+#MultiDex:true
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private Timer1 As Timer
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("Layout")
+	Timer1.Initialize("Timer1",3000)
+	Timer1.Enabled=True
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub Timer1_tick
+	Timer1.Enabled=False
+	StartActivity(Login)
+	Activity.Finish
+End Sub
+
